@@ -88,7 +88,7 @@ Test method `test_meta_title()`.
 
 ---
 
-## Task 8.
+## Task 8. Layouts.
 
 Change the file `resources/views/layout.blade` to extend the `layouts/main.blade.php` (without Blade components) instead of `layouts/app.blade.php` (with Blade components).
 

@@ -16,8 +16,10 @@ module.exports = {
     },
 
     variants: {
+        // backgroundColor: ['even'],
         extend: {
             opacity: ['disabled'],
+
         },
     },
 

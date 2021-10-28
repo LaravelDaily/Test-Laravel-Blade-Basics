@@ -20,7 +20,7 @@ Route::get('/users', [HomeController::class, 'users'])->name('users');
 Route::get('/alert', [HomeController::class, 'alert'])->name('alert');
 Route::get('/table', [HomeController::class, 'table'])->name('table');
 Route::get('/rows', [HomeController::class, 'rows'])->name('rows');
-Route::view('/authenticated', 'authenticated')->name('authenticated');
+Route::get('/authenticated', [HomeController::class, 'authenticated'])->name('authenticated');
 Route::get('/include', [HomeController::class, 'include'])->name('include');
 Route::view('/layout', 'layout')->name('layout');
 

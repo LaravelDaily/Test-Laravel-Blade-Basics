@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //Task 7.
+        View::share('metaTitle', 'Blade Test');
     }
 }

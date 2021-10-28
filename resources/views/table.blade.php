@@ -19,14 +19,20 @@
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
                         <tbody>
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">No content.</td>
-                            </tr>
+                            @forelse ($users as $user)
+                                @if($loop->even)
+                                    <tr class="bg-red-100">
+                                @endif
+                                    <td  class="p-2">{{ $user->name }}</td>
+                                    <td class="p-2">{{ $user->email }}</td>
+                                    <td class="p-2">{{ $user->created_at }}</td>
+                                </tr>   
+                                @empty
+                                <tr>
+                                    <td class="p-2" colspan="3">No content.</td>
+                                </tr>                                    
+                            @endforelse
+                                
                         </tbody>
                     </table>
                 </div>

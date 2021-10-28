@@ -9,9 +9,9 @@ class HomeController extends Controller
     // Task 1. Change the Controller code to pass the variable to the View
     public function users()
     {
-        $usersCount = User::count();
+        $usersCount = User::all()->count();
 
-        return view('users');
+        return view('users',compact('usersCount'));
     }
 
     // Task 2. Change the View code so alert would not show on the screen

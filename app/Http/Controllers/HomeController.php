@@ -11,13 +11,13 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users', compact('usersCount'));
     }
 
     // Task 2. Change the View code so alert would not show on the screen
     public function alert()
     {
-        $text = '<script>alert("I am a security alert, your task is to remove me.");</script>';
+        $text = '&lt;script&gt;alert("I am a security alert, your task is to remove me.");&lt;script&gt;';
 
         return view('alert', compact('text'));
     }
@@ -30,7 +30,10 @@ class HomeController extends Controller
         return view('table', compact('users'));
     }
 
-    // Task 3. Change the View code to show users, or row "No content" if 0 users
+    // Task 4. Three sub-tasks related to the table and loop, all in file resources/views/rows.blade.php:
+    // - in the first column, add the row number: 1, 2, etc.
+    // - only every second row (2nd, 4th, etc) should have CSS class "bg-red-100"
+    // - only the FIRST row should have email column with "font-bold"
     public function rows()
     {
         $users = User::all();

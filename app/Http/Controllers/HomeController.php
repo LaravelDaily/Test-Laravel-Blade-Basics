@@ -17,7 +17,8 @@ class HomeController extends Controller
     // Task 2. Change the View code so alert would not show on the screen
     public function alert()
     {
-        return view('alert');
+        $text = "I am a security alert, your task is to remove me.";
+        return view('alert', ['text' => $text]);
     }
 
     // Task 3. Change the View code to show users, or row "No content" if 0 users

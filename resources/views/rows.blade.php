@@ -19,14 +19,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i = 1;
+                            @endphp
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
-                                    <td>{{ $user->name }}</td>
+                                <tr class="{{ $i % 2 == 0 ? 'bg-red-100' : '' }}">
+                                    <td>{{ $i }}</td>
+                                    <td class="">{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    <td class="{{ $i == 1 ? 'font-bold' : '' }}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
+                                    @php
+                                        $i++;
+                                    @endphp
                                 </tr>
                             @endforeach
                         </tbody>

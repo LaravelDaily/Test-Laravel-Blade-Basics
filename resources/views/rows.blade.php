@@ -19,14 +19,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $key => $user)
+                            @forelse ($users as $key => $user)
                                 <tr class="<?= $key % 2 == 0 ? 'bg-red-100' : ''?>">
                                     <td>{{ $key + 1 }</td>
                                     <td>{{ $user->name }}</td>
                                     <td class="<?= $key == 0 ? 'font-bold' : ''?>">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function alert()
     {
         $text = "I am a security alert, your task is to remove me.";
-        return view('alert', ['text' => $text]);
+        return view('alert', compact('text'));
     }
 
     // Task 3. Change the View code to show users, or row "No content" if 0 users

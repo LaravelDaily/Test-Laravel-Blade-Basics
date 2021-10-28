@@ -1,4 +1,3 @@
-<x-app-layout>
 @extends('layouts.main')
 
 @section('content')
@@ -13,5 +12,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
 @endsection

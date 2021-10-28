@@ -19,11 +19,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
-                                <tr class="<?= $loop->even ? 'bg-red-100' : ''?>">
-                                    <td>{{ $loop->iteration }</td>
+                            @foreach ($users as $key => $user)
+                                <tr class="<?= $key % 2 == 0 ? 'bg-red-100' : ''?>">
+                                    <td>{{ $key + 1 }</td>
                                     <td>{{ $user->name }}</td>
-                                    <td class="<?= $loop->index === 0 ? 'font-bold' : ''?>">{{ $user->email }}</td>
+                                    <td class="<?= $key == 0 ? 'font-bold' : ''?>">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

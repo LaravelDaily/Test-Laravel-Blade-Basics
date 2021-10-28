@@ -4,6 +4,8 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+use function compact;
+
 class AppLayout extends Component
 {
     /**
@@ -13,6 +15,15 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+        $metaTitle = 'Blade Test';
+        $header = 'Main Layout';
+
+        return view(
+            'layouts.app',
+            compact(
+                'metaTitle',
+                'header'
+            )
+        );
     }
 }

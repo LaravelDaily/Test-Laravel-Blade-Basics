@@ -20,16 +20,18 @@
                         </thead>
                         <tbody>
                             @forelse ($users as $key => $user)
+                                {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr class="{{ $key % 2 == 0 ? 'bg-red-100' : ''}}">
-                                    <td>{{ $key + 1 }</td>
+                                    <td>{{ 1 + $key }}</td>
                                     <td>{{ $user->name }}</td>
+                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     <td class="{{ $key == 0 ? 'font-bold' : ''}}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @empty
-                                <tr>
-                                    <td colspan="3">No content.</td>
-                                </tr>
+                            <tr>
+                                <td colspan="3">No content.</td>
+                            </tr>
                             @endforelse
                         </tbody>
                     </table>

@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        view()->share('metaTitle', 'Blade Test');
     }
 
     /**

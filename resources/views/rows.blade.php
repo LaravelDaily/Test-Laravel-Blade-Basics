@@ -20,10 +20,10 @@
                         </thead>
                         <tbody>
                             @forelse ($users as $key => $user)
-                                <tr class="<?= $key % 2 == 0 ? 'bg-red-100' : ''?>">
+                                <tr class="{{ $key % 2 == 0 ? 'bg-red-100' : ''}}">
                                     <td>{{ $key + 1 }</td>
                                     <td>{{ $user->name }}</td>
-                                    <td class="<?= $key == 0 ? 'font-bold' : ''?>">{{ $user->email }}</td>
+                                    <td class="{{ $key == 0 ? 'font-bold' : ''}}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @empty

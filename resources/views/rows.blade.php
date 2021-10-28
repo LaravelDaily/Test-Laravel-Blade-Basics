@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                                    <tr @if ($loop->iteration % 2 === 0)  class="bg-red-100" @endif>
+                                    <tr @if ($loop->even)  class="bg-red-100" @endif>
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td @if ($loop->first) class="font-bold" @endif>{{ $user->email }}</td>

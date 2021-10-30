@@ -44,6 +44,7 @@ class ViewsTest extends TestCase
 
     public function test_authenticated()
     {
+        $this->withoutExceptionHandling();
         $response = $this->get('/authenticated');
         $response->assertDontSee('Yes, I am logged in');
         $response->assertSee('No, I am not logged in.');

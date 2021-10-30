@@ -17,7 +17,6 @@
                                 <th>Registered at</th>
                             </tr>
                         </thead>
-                        {{-- Task: add the loop here to show users, or the row "No content" --}}
                         <tbody>
                             @forelse ($users as $user)
                                 <tr>

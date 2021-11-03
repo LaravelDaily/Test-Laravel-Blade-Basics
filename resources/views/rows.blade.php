@@ -21,9 +21,11 @@
                         <tbody>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                    @if ($loop->odd)
-                                        <tr class="bg-red-100">
-                                    @endif
+                                @if ($loop->odd)
+                                    <tr class="bg-red-100">
+                                @else
+                                    </tr>
+                                @endif
                                     <td>{{-- Task: add row number here: 1, 2, etc. --}} {{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}

@@ -1,2 +1,4 @@
-<td>{{ $user->name }}</td>
-<td>{{ $user->email }}</td>
+@foreach ($users as $user)
+    <td>{{ $user->name }}</td>
+    <td>{{ $user->email }}</td>    
+@endforeach

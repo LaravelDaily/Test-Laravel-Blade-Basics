@@ -17,8 +17,20 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
-            @yield('content')
+        <div class="font-sans antialiased text-gray-900">
+            @include('layouts.navigation')
+
+            <!-- Page Heading -->
+            <header class="bg-white shadow">
+                <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    @yield('header')
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main>
+                @yield('content')
+            </main>
         </div>
     </body>
 </html>

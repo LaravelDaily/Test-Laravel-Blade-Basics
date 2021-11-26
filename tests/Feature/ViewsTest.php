@@ -37,9 +37,15 @@ class ViewsTest extends TestCase
     {
         $users = User::factory(4)->create();
         $response = $this->get('/rows');
+        $response->assertSeeInOrder(['bg-white', 'bg-red-100', 'bg-white', 'bg-red-100']);
+        $response->assertSeeInOrder([$users[0]->email, 'Not Available', 'Not Available', 'Not Available']);
+
         $this->assertEquals(2, substr_count($response->content(), 'bg-red-100'));
-        $this->assertStringContainsString('<tdclass="font-bold">'.$users[0]->email.'</td>',
-            str_replace(' ', '', $response->content()));
+        $this->assertStringContainsString('<td>1</td>', $response->content());
+        $this->assertStringNotContainsString('<td>0</td>', $response->content());
+        $this->assertStringContainsString('<td class="font-bold">' . $users[0]->email . '</td>', $response->content());
+        $this->assertEquals(3, substr_count($response->content(), '<td>Not Available</td>'));
+        $this->assertEquals(1, substr_count($response->content(), 'font-bold'));
     }
 
     public function test_authenticated()

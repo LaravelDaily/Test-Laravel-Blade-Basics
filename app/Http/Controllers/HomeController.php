@@ -38,10 +38,11 @@ class HomeController extends Controller
         return view('rows', compact('users'));
     }
 
-    public function include()
+   public function include()
     {
         $users = User::all();
 
         return view('include', compact('users'));
+        return view('includes.row', compact('users'));
     }
 }

@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Providers;
-
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -16,7 +13,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
     /**
      * Bootstrap any application services.
      *
@@ -24,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-         //
+        //
         View::share('metaTitle', 'Blade Test');
     }
 }

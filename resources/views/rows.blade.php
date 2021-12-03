@@ -20,10 +20,10 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                                <tr class="{{ $loop->iteration % 2 === 0 ?? 'bg-red-100' }}">
+                                <tr class="{{ $loop->iteration % 2 === 0 ? 'bg-red-100' : ''}}">
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
-                                    <td class="{{ $loop->first ?? 'font-bold' }}">{{ $user->email }}</td>
+                                    <td class="{{ $loop->first ? 'font-bold' : '' }}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

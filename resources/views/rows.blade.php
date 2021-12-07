@@ -29,7 +29,9 @@
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @empty
-                                No Content
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
                             @endforelse
                         </tbody>
                     </table>

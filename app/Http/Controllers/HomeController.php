@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users', compact("usersCount"));
     }
 
     // Task 2. Change the View code so alert would not show on the screen
@@ -40,7 +40,7 @@ class HomeController extends Controller
 
     public function include()
     {
-        $users = User::all();
+        $users = User::count();
 
         return view('include', compact('users'));
     }

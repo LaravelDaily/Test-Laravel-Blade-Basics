@@ -42,17 +42,17 @@ class ViewsTest extends TestCase
             str_replace(' ', '', $response->content()));
     }
 
-    // public function test_authenticated()
-    // {
-    //     $response = $this->get('/authenticated');
-    //     $response->assertDontSee('Yes, I am logged in');
-    //     $response->assertSee('No, I am not logged in.');
+    public function test_authenticated()
+    {
+        $response = $this->get('/authenticated');
+        $response->assertDontSee('Yes, I am logged in');
+        $response->assertSee('No, I am not logged in.');
 
-    //     $user = User::factory()->create();
-    //     $response = $this->actingAs($user)->get('/authenticated');
-    //     $response->assertSee('Yes, I am logged in as ' . $user->email);
-    //     $response->assertDontSee('No, I am not logged in.');
-    // }
+        $user = User::factory()->create();
+        $response = $this->actingAs($user)->get('/authenticated');
+        $response->assertSee('Yes, I am logged in as ' . $user->email);
+        $response->assertDontSee('No, I am not logged in.');
+    }
 
     // public function test_include_row()
     // {

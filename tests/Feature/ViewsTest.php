@@ -67,11 +67,11 @@ class ViewsTest extends TestCase
     //     $response->assertSee('Blade Test');
     // }
 
-    // public function test_layout()
-    // {
-    //     $response = $this->get('/layout');
-    //     $response->assertOk();
-    //     $response->assertSee('Main Layout');
-    //     $response->assertSee('Please change layout');
-    // }
+    public function test_layout()
+    {
+        $response = $this->get('/layout');
+        $response->assertOk();
+        $response->assertSee('Main Layout');
+        $response->assertSee('Please change layout');
+    }
 }

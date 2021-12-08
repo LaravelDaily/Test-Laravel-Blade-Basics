@@ -61,11 +61,11 @@ class ViewsTest extends TestCase
         $this->assertStringContainsString($user->email, $response->content());
     }
 
-    // public function test_meta_title()
-    // {
-    //     $response = $this->get('/');
-    //     $response->assertSee('Blade Test');
-    // }
+    public function test_meta_title()
+    {
+        $response = $this->get('/');
+        $response->assertSee('Blade Test');
+    }
 
     public function test_layout()
     {

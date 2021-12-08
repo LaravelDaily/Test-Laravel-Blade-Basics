@@ -54,12 +54,12 @@ class ViewsTest extends TestCase
         $response->assertDontSee('No, I am not logged in.');
     }
 
-    // public function test_include_row()
-    // {
-    //     $user = User::factory()->create();
-    //     $response = $this->get('/include');
-    //     $this->assertStringContainsString($user->email, $response->content());
-    // }
+    public function test_include_row()
+    {
+        $user = User::factory()->create();
+        $response = $this->get('/include');
+        $this->assertStringContainsString($user->email, $response->content());
+    }
 
     // public function test_meta_title()
     // {

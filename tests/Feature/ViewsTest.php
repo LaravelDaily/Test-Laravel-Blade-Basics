@@ -23,15 +23,15 @@ class ViewsTest extends TestCase
         $this->assertStringContainsString('&lt;script&gt;alert', $response->content());
     }
 
-    // public function test_loop_shows_table_or_empty()
-    // {
-    //     $response = $this->get('/table');
-    //     $this->assertStringContainsString('No content', $response->content());
+    public function test_loop_shows_table_or_empty()
+    {
+        $response = $this->get('/table');
+        $this->assertStringContainsString('No content', $response->content());
 
-    //     User::factory()->create();
-    //     $response = $this->get('/table');
-    //     $this->assertStringNotContainsString('No content', $response->content());
-    // }
+        User::factory()->create();
+        $response = $this->get('/table');
+        $this->assertStringNotContainsString('No content', $response->content());
+    }
 
     // public function test_rows_styled_with_number()
     // {

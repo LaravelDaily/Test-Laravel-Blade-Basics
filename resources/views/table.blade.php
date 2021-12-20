@@ -19,14 +19,18 @@
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
                         <tbody>
+                            @forelse ($users as $item)
                             <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->created_at }}</td>
                             </tr>
+                            @empty
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>
+                            @endforelse
+
                         </tbody>
                     </table>
                 </div>

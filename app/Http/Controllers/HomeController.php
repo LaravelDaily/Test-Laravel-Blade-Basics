@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 
+use function Symfony\Component\VarDumper\Dumper\esc;
+
 class HomeController extends Controller
 {
     // Task 1. Change the Controller code to pass the variable to the View
@@ -11,7 +13,7 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users', ['usersCount' => $usersCount]);
     }
 
     // Task 2. Change the View code so alert would not show on the screen

@@ -14,7 +14,7 @@
                     @guest
                     No, I am not logged in.
                     @elseguest
-                     Yes, I am logged in as {{auth()->user()->email}}.
+                     Yes, I am logged in as {{Auth::user()->email}}.
                     @endguest
                     
                 </div>

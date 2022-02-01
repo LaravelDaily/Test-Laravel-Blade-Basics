@@ -1,4 +1,3 @@
-<x-app-layout>
 @extends('layouts.main')
 @section('content')
     <div class="py-12">
@@ -12,5 +11,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
 @endsection

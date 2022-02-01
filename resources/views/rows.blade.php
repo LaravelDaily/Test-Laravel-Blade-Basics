@@ -22,7 +22,7 @@
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr @if($loop->even) class="bg-red-100" @endif>
-                                    <td>{{$loop->index+1}}</td>
+                                    <td>{{($loop->index+1)}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     <td @if($loop->first) class="font-bold" @endif>{{ $user->email }}</td>

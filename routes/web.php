@@ -25,3 +25,4 @@ Route::get('/include', [HomeController::class, 'include'])->name('include');
 Route::view('/layout', 'layout')->name('layout');
 
 require __DIR__.'/auth.php';
+

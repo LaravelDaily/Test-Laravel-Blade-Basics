@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \Illuminate\Database\Schema\Builder::defaultStringLength(240);
+        View::share('metaTitle', 'Blade Test');
     }
 }

@@ -20,33 +20,36 @@
                         </thead>
                         <tbody>
                             @php
-                              $i = 1;
+                                $i = 1;
                             @endphp
-                            @foreach ($users as $user)
+                            @forelse ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                @if($i%2==0)
-                                <tr >
-                                    <td>{{$i}}</td>
-                                    @if($i==1)
-                                    <td class="font-bold">{{ $user->email }}</td>
+
+                                @if ($loop->even)
+                                    <tr class="bg-red-100">
                                     @else
-                                    <td>{{ $user->email }}</td>
-                                    @endif
-                                    <td>{{ $user->created_at }}</td>
-                                </tr
-                                @else
-                                <tr class="bg-red-100">
-                                    <td>{{$i}}</td>
-                                    <td>{{ $user->name }}</td>
-                                    @if($i==1)
-                                    <td class="font-bold">{{ $user->email }}</td>
-                                    @else
-                                    <td>{{ $user->email }}</td>
-                                    @endif
-                                    <td>{{ $user->created_at }}</td>
-                                </tr>
+                                    <tr>
                                 @endif
-                            @endforeach
+
+                                <td>{{ $i++ }}</td>
+                                <td>{{ $user->name }}</td>
+
+                                {{-- Task: only the FIRST row should have email with "font-bold" --}}
+
+                                @if ($loop->first)
+                                    <td class="font-bold">{{ $user->email }}</td>
+                                @else
+                                    <td>{{ $user->email }}</td>
+                                @endif
+
+                                <td>{{ $user->created_at }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
+                            @endforelse
+
                         </tbody>
                     </table>
                 </div>

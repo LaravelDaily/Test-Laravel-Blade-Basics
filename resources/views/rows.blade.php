@@ -19,16 +19,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{-- {{dd($users)}} --}}
+                            @if (!$users->isEmpty())
+                            <?php $i =1; ?>   
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                <tr class="{{ $i==2 ? 'bg-red-100' : ''}}">
+                                    {{-- <td>Task: add row number here: 1, 2, etc.</td> --}}
+                                    <td>{{$i}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    <td class="{{ $i==1 ? 'font-bold' : ''}}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
+                                    <?php $i++;?>
                                 </tr>
                             @endforeach
+                            @else 
+                            <tr>
+                                <td colspan="3">No content.</td>
+                            </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

@@ -24,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('layouts.app', function($view) {
+            $view->with('metaTitle' , 'Blade Test');
+        });
     }
 }

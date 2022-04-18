@@ -21,11 +21,20 @@
                         <tbody>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                <tr 
+                                    @if($loop->iteration%2==1)
+                                        tdclass="bg-red-100"
+                                    @endif
+                                >
+                                    {{-- Task: add row number here: 1, 2, etc. --}}
+                                    <td>{{$loop->iteration}}</td>
+
                                     <td>{{ $user->name }}</td>
+
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    <td @if($loop->first) class="font-bold" @endif> {{ $user->email }}</td>
+                                    {{-- !!!! Test failed here when i added spaces here :) !!!!!!!--}}
+                                    
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

@@ -19,22 +19,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($users as $user)
+                            @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr @if($loop->even)class='bg-red-100'@endif >
+                                <tr @class([ 'bg-red-100' => $loop->even ]) >
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td @if($loop->first)class='font-bold'@endif >
+                                    <td @class([ 'font-bold' => $loop->first ]) >
                                         {{ $user->email }}
                                     </td>
                                     <td>{{ $user->created_at }}</td>
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="3">No content.</td>
-                                </tr>
-                            @endforelse
+                                </tr>                    
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

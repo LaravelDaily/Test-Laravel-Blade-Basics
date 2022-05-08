@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->share('metaTitle', 'Meta Title');
+        view()->share('metaTitle', 'Blade Test');
     }
 }

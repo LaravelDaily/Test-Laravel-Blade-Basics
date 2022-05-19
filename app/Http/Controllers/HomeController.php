@@ -27,9 +27,10 @@ class HomeController extends Controller
     // Task 3. Change the View code to show users, or row "No content" if 0 users
     public function table()
     {
-        $users = User::all();
+        $users = User::all(); 
+        $count = $users->count();
 
-        return view('table', compact('users'));
+        return view('table', compact('users','count'));
     }
 
     // Task 3. Change the View code to show users, or row "No content" if 0 users

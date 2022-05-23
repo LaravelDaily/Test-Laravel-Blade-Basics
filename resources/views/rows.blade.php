@@ -28,11 +28,7 @@
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     
-                                    <td 
-                                    @if ($loop->first)class="font-bold"
-                                    @endif>
-                                    {{ $user->email }}
-                                    </td>
+                                    <td @class(['font-bold' => $loop->first])>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

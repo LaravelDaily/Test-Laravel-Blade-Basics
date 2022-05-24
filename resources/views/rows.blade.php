@@ -23,7 +23,7 @@
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr class="@if($loop->even) bg-red-100 @endif">
                                     <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
-                                    <td>@if($loop->iteration) @endif</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     <td class="@if ($loop->iteration == 1) font-bold @endif">{{ $user->email }}</td>

@@ -19,16 +19,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @forelse ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
-                                    <td>{{ $user->name }}</td>
-                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
+                                @if ($loop->odd)
+                                    <tr class="bg-red-100">
+                                        <td>{{ $loop->index + 1}}</td>
+                                        <td>{{ $user->name }}</td>
+                                        {{-- Task: only the FIRST row should have email with "font-bold" --}}
+                                        @if ($loop->first)
+                                            <td class="font-bold">{{ $user->email }}</td>
+                                        @endif
+                                        <td>{{ $user->created_at }}</td>
+                                    </tr>
+                                @endif
+
+                                @empty
+                                <tr>
+                                    <td colspan="3">No content.</td>
                                 </tr>
-                            @endforeach
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

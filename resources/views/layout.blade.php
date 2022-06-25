@@ -1,7 +1,10 @@
-<x-app-layout>
+@extends('layouts.main')
+@section('content')
+
+<x-main-layout>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- Task: change the layout from layouts/app.blade.php --}}
                     {{-- to layouts/main.blade.php --}}
@@ -10,4 +13,5 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+
+@endsection

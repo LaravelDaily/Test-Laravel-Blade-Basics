@@ -21,7 +21,7 @@
                         <tbody>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr @if ($loop->iteration%2==0)
+                                <tr @if ($loop->iteration % 2 == 0)
                                     class="bg-red-100"
                                 @endif >
                                     <td>{{-- Task: add row number here: 1, 2, etc. --}}{{ $loop->iteration}}</td>

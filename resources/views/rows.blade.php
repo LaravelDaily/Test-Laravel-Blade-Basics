@@ -24,7 +24,7 @@
                                 <tr @if ($loop->iteration % 2 == 0)
                                     class="bg-red-100"
                                 @endif >
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}{{ $loop->iteration}}</td>
+                                    <td>{{ $loop->iteration}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     <td @if ($loop->first)

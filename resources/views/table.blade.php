@@ -28,7 +28,7 @@
                             </tr>
                             @endforeach
 
-                            @if (coutn($users)<1)
+                            @if (count($users)<1)
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>

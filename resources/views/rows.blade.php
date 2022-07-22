@@ -26,8 +26,10 @@
                                     <td>{{ $user->name }}</td>
                                     <td class="@if($loop->first)font-bold @endif">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
-                                </tr>
-                            @else
+                                @if($loop->even)
+                                    </tr>
+                                @endif
+                            @empty
                                 <tr>
                                     <td colspan="3">No content.</td>
                                 </tr>

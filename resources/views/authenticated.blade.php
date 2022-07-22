@@ -12,9 +12,9 @@
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
                     @auth
-                    Yes, I am logged in as {{ auth()->user()->email }}.
-                    @elseauth
-                    No, I am not logged in.
+                        Yes, I am logged in as {{ auth()->user()->email }}.
+                    @else
+                        No, I am not logged in.
                     @endauth
                 </div>
             </div>

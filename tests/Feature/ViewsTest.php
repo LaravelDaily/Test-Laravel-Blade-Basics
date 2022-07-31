@@ -38,8 +38,7 @@ class ViewsTest extends TestCase
         $users = User::factory(4)->create();
         $response = $this->get('/rows');
         $this->assertEquals(2, substr_count($response->content(), 'bg-red-100'));
-        $this->assertStringContainsString('<tdclass="font-bold">'.$users[0]->email.'</td>',
-            str_replace(' ', '', $response->content()));
+        $this->assertStringContainsString('<tdclass="font-bold">' . $users[0]->email . '</td>', str_replace(' ', '', $response->content()));
     }
 
     public function test_authenticated()

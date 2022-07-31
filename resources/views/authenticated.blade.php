@@ -13,6 +13,11 @@
                     {{-- If user is logged in, show their email --}}
                     Yes, I am logged in as [insert_user_email_here].
                     No, I am not logged in.
+                    @if (Auth::check())
+                        Yes, I am logged in as {{ Auth::user()->email }}.
+                    @else
+                        No, I am not logged in.
+                    @endif
                 </div>
             </div>
         </div>

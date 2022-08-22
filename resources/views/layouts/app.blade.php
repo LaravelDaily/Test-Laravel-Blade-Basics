@@ -7,6 +7,8 @@
 
         {{-- Task: edit one file to pass $metaTitle as "Blade Test" to all views --}}
         <title>{{ $metaTitle ?? 'Laravel' }}</title>
+        <title>{{ $metaTitle ?? 'Blade Test' }}</title>
+
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -24,12 +26,13 @@
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+                    {{-- {{ $header }} --}}
                 </div>
             </header>
 
             <!-- Page Content -->
             <main>
+                @include('layouts.main')
                 {{ $slot }}
             </main>
         </div>

@@ -10,24 +10,29 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
-                        <thead>
+                        @if(count($users) != 0)
+                            <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Registered at</th>
                             </tr>
-                        </thead>
-                        {{-- Task: add the loop here to show users, or the row "No content" --}}
-                        <tbody>
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">No content.</td>
-                            </tr>
-                        </tbody>
+                            </thead>
+                            {{-- Task: add the loop here to show users, or the row "No content" --}}
+                            @foreach($users as $user)
+                                <tbody>
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                </tr>
+                                @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="3">No content.</td>
+                                    </tr>
+                                @endif
+                                </tbody>
                     </table>
                 </div>
             </div>

@@ -43,6 +43,5 @@ class HomeController extends Controller
         $users = User::all();
 
         return view('include', compact('users'));
-        
     }
 }

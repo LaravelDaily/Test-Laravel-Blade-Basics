@@ -12,7 +12,7 @@
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
                     @if(\Illuminate\Support\Facades\Auth::check())
-                        Yes, I am logged in as [{{\Illuminate\Support\Facades\Auth::user()->email}}].
+                        Yes, I am logged in as {{\Illuminate\Support\Facades\Auth::user()->email}}.
                     @else
                         No, I am not logged in.
                     @endif

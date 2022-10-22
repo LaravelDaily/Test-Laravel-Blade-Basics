@@ -20,7 +20,7 @@
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
                         <tbody>
                         @foreach($users as $user)
-                            @if(isset($users))
+                            @if(isset($user))
                                 <tr>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>

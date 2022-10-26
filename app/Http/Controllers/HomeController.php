@@ -11,7 +11,9 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users',[
+            'usersCount' => $usersCount
+        ]);
     }
 
     // Task 2. Change the View code so alert would not show on the screen
@@ -19,6 +21,7 @@ class HomeController extends Controller
     {
         $text = '<script>alert("I am a security alert, your task is to remove me.");</script>';
 
+        $text =$text;
         return view('alert', compact('text'));
     }
 

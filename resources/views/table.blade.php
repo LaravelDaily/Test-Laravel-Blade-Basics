@@ -18,6 +18,8 @@
                             </tr>
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
+                        @forelse ( $users as $user )
+                            
                         <tbody>
                             <tr>
                                 <td>{{ $user->name }}</td>
@@ -27,6 +29,12 @@
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>
+                        @empty
+                        <tr>
+                            <td colspan="3">No content</td>
+                        </tr>
+                        
+                        @endforelse
                         </tbody>
                     </table>
                 </div>

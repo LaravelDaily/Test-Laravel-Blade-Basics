@@ -25,11 +25,10 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at }}</td>
                             </tr>
+                        @empty
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>
-                            @empty
-                                <tr>No content</tr>
                         @endforelse
                         </tbody>
                     </table>

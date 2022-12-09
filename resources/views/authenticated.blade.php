@@ -16,11 +16,11 @@
                     No, I am not logged in.
                     @auth
                         Yes, I'm logged in as {{ auth()->user()->email }}
+                    @elseauth
+                        No, I'm not logged in.
                     @endauth
                     
-                    @guest
-                        No, I'm not logged in.
-                    @endguest
+                    
                 </div>
             </div>
         </div>

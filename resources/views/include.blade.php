@@ -19,7 +19,7 @@
                         <tbody>
                             @foreach ($users as $user)
                                 <tr class="bg-red-100">
-                                    @include('includes.row', compact('user'))
+                                    @include('includes.row', compact('$user'))
                                 </tr>
                             @endforeach
                         </tbody>

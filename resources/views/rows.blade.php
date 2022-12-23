@@ -21,13 +21,11 @@
                         <tbody>
                             @foreach ($users as $index => $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class=@if(($index + 1) % 2 == 0) "bg-red-100" @else "" @endif>
-                                    <td>{{ $index + 1 }}</td>
+                                <tr @class(['bg-red-100' => $loop->even])>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    @if($index == 0)
-                                        <td class="font-bold">{{ $user->email }}</td>
-                                    @endif
+                                    <td @class(['font-bold' => $loop->first])>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

@@ -19,6 +19,7 @@
                         <tbody>
                             @foreach ($users as $user)
                                 <tr class="bg-red-100">
+                                    @include('rows', ['user' => 'user'])
                                     {{-- Task: include file resources/views/includes/row.blade.php --}}
                                     {{-- passing the $user variable to it --}}
                                 </tr>

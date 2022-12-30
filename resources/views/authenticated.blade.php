@@ -12,7 +12,11 @@
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
                     @auth
+<<<<<<< HEAD
                     Yes, I am logged in as {{ Auth::user()->email}}.
+=======
+                    Yes, I am logged in as {{ auth:user ()->email }}.
+>>>>>>> 7c643c0f54aeb12a37d50aaeaccf9fee9fa2ae71
                     @else
                     No, I am not logged in.
                     @endauth

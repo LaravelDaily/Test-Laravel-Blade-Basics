@@ -21,7 +21,12 @@
                                 <tr class="bg-red-100">
                                     {{-- Task: include file resources/views/includes/row.blade.php --}}
                                     {{-- passing the $user variable to it --}}
+<<<<<<< HEAD
                                     @include('includes.row', ['user' => $user])
+=======
+                                    @include ('includes.row', compact ('user'))
+                                    
+>>>>>>> 7c643c0f54aeb12a37d50aaeaccf9fee9fa2ae71
                                 </tr>
                             @endforeach
                         </tbody>

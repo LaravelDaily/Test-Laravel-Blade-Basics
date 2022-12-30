@@ -11,7 +11,11 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
+<<<<<<< HEAD
         return view('users', ['usersCount' => $usersCount]);
+=======
+        return view('users', compact ('usersCount'));
+>>>>>>> 7c643c0f54aeb12a37d50aaeaccf9fee9fa2ae71
     }
 
     // Task 2. Change the View code so alert would not show on the screen

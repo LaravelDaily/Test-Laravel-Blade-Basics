@@ -21,11 +21,19 @@
                         <tbody>
                             @forelse ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
+<<<<<<< HEAD
                                 <tr class="{{ $loop->even ? 'bg-red-100' : ''}}">
                                     <td>{{ $loop->index }}{{-- Task: add row number here: 1, 2, etc. --}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     <td class="{{ $loop->first ? 'font-bold' : ''}}">{{ $user->email }}</td>
+=======
+                                <tr class="{{ $loop->odd ? 'bg-red-100' : '' }}">
+                                    <td>{{ $loop->index }}{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                    <td>{{ $user->name }}</td>
+                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
+                                    <td class="{{ $loop->first ? 'font-bold' : '' }}">{{ $user->email }}</td>
+>>>>>>> 7c643c0f54aeb12a37d50aaeaccf9fee9fa2ae71
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @empty

@@ -4,14 +4,9 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class AppLayout extends Component
+class MainLayout extends Component
 {
 
-    /**
-     * The meta title
-     */
-
-    public $metaTitle = 'Blade Test';
 
     /**
      * Get the view / contents that represents the component.
@@ -20,6 +15,6 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+        return view('layouts.main');
     }
 }

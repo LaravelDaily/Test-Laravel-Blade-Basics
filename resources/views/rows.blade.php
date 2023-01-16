@@ -18,23 +18,18 @@
                                 <th>Registered at</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach ($users as $user)
-                                {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="{{ $loop->even ? 'bg-red-100' : '' }}">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}
-                                        {{ $loop->iteration }}
-                                    </td>
-                                    <td>{{ $user->name }}</td>
-                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td
-                                        class="
-                                    {{ $loop->index == 0 ? 'font-bold' : '' }}">
-                                        {{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                    <tbody>
+                        @foreach ($users as $user)
+                            {{-- Task: only every second row should have "bg-red-100" --}}
+                            <tr class="{{($loop->even) ? 'bg-red-100' : ''}}">
+                                <td>{{($loop->index + 1)}}</td>
+                                <td>{{ $user->name }}</td>
+                                {{-- Task: only the FIRST row should have email with "font-bold" --}}
+                                <td class="{{($loop->index == 0) ? 'font-bold' : ''}}">{{ $user->email }}</td>
+                                <td>{{ $user->created_at }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                     </table>
                 </div>
             </div>

@@ -13,6 +13,7 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+        $metaTitle = 'Blade task test';
+        return view('layouts.app', compact('metaTitle'));
     }
 }

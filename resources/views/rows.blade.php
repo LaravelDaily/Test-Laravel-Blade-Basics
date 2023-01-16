@@ -27,7 +27,7 @@
                                     </td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="{{ $loop->first ? 'font-bold' : '' }}">
+                                    <td class="{{ $loop->index == 0 ? 'font-bold' : '' }}">
                                         {{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>

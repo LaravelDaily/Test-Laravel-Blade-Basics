@@ -11,13 +11,20 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
                         <thead>
+                            @foreach($users as $user)
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Registered at</th>
+                                <th>$user->name</th>
+                                <th>$user->email</th>
+                                <th>$user->created_at</th>
                             </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
+                                @endforeach
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
+
                         <tbody>
                             <tr>
                                 <td>{{ $user->name }}</td>

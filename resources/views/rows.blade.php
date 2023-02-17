@@ -19,14 +19,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($users as $user)
+                            @forelse ($users as $index => $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
 
-                                <tr class="{{ @loop->index % 2 == 0 ? 'bg-red-100' : '' }}">
-                                    <td>{{@loop->index + 1}}</td>
+                                <tr class="{{ ($index + 1) % 2 == 0 ? 'bg-red-100' : '' }}">
+                                    <td>{{$index + 1}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="{{ @loop->first ? 'font-bold' : '' }}">{{ $user->email }}</td>
+                                    <td class="{{ $index == 0 ? 'font-bold' : '' }}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @empty

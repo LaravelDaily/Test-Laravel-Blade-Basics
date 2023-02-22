@@ -18,17 +18,22 @@
                             </tr>
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
-                        <tbody>
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">No content.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        @forelse ($users as $user)
+                            <tbody>
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                </tr>
+                            </tbody>
+                        @empty
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
+                            </tbody>
+                        @endforelse
+                    </table> 
                 </div>
             </div>
         </div>

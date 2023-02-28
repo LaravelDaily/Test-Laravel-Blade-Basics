@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -22,7 +23,7 @@ class ViewsTest extends TestCase
         $this->assertStringNotContainsString('<script>alert', $response->content());
         $this->assertStringContainsString('&lt;script&gt;alert', $response->content());
     }
-
+    
     public function test_loop_shows_table_or_empty()
     {
         $response = $this->get('/table');
@@ -32,7 +33,7 @@ class ViewsTest extends TestCase
         $response = $this->get('/table');
         $this->assertStringNotContainsString('No content', $response->content());
     }
-
+    
     public function test_rows_styled_with_number()
     {
         $users = User::factory(4)->create();
@@ -41,7 +42,7 @@ class ViewsTest extends TestCase
         $this->assertStringContainsString('<tdclass="font-bold">'.$users[0]->email.'</td>',
             str_replace(' ', '', $response->content()));
     }
-
+    
     public function test_authenticated()
     {
         $response = $this->get('/authenticated');
@@ -50,23 +51,24 @@ class ViewsTest extends TestCase
 
         $user = User::factory()->create();
         $response = $this->actingAs($user)->get('/authenticated');
+        
         $response->assertSee('Yes, I am logged in as ' . $user->email);
         $response->assertDontSee('No, I am not logged in.');
     }
-
+    
     public function test_include_row()
     {
         $user = User::factory()->create();
         $response = $this->get('/include');
         $this->assertStringContainsString($user->email, $response->content());
     }
-
+    
     public function test_meta_title()
     {
         $response = $this->get('/');
         $response->assertSee('Blade Test');
     }
-
+    
     public function test_layout()
     {
         $response = $this->get('/layout');

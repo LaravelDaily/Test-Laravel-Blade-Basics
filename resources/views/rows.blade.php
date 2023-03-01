@@ -11,24 +11,52 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
                         <thead>
-                            <tr>
-                                <th>Row Number</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Registered at</th>
-                            </tr>
+                        <tr>
+                            <th>Row Number</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Registered at</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
-                                {{-- Task: only every second row should have "bg-red-100" --}}
+                        @foreach ($users as $user)
+                            {{-- Task: only every second row should have "bg-red-100" --}}
+                            @if($loop->even)
                                 <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                    <td>{{$loop->index++}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
+                                    @if($loop->first)
+                                        <td class="font-bold">{{ $user->email }}</td>
+                                    @else
+                                        <td>{{ $user->email }}</td>
+                                    @endif
+                                    {{-- Task: only the LAST row should have "font-bold" --}}
+                                    @if($loop->last)
+                                        <td>{{ $user->created_at }}</td>
+                                    @else
+                                        <td class="font-bold">{{ $user->created_at }}</td>
+                                    @endif
                                 </tr>
-                            @endforeach
+                            @else
+                                <tr>
+                                    <td>{{$loop->index++}}</td>
+                                    <td>{{ $user->name }}</td>
+                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
+                                    @if($loop->first)
+                                        <td class="font-bold">{{ $user->email }}</td>
+                                    @else
+                                        <td>{{ $user->email }}</td>
+                                    @endif
+                                    {{-- Task: only the LAST row should have "font-bold" --}}
+                                    @if($loop->last)
+                                        <td>{{ $user->created_at }}</td>
+                                    @else
+                                        <td class="font-bold">{{ $user->created_at }}</td>
+                                    @endif
+                                </tr>
+                            @endif
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

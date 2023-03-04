@@ -7,7 +7,6 @@ To test if all the functions work correctly, there are PHPUnit tests in `tests/F
 In the very beginning, if you run `php artisan test`, or `vendor/bin/phpunit`, all 8 tests fail.
 Your task is to make those tests pass.
 
-
 ## How to Submit Your Solution
 
 If you want to submit your solution, you should make a Pull Request to the `main` branch.
@@ -16,7 +15,6 @@ It will automatically run the tests via Github Actions and will show you/me if t
 If you don't know how to make a Pull Request, [here's my video with instructions](https://www.youtube.com/watch?v=vEcT6JIFji0).
 
 This task is mostly self-served, so I'm not planning review or merge the Pull Requests. This test is for yourselves to assess your skills, the automated tests will be your answer if you passed the test :)
-
 
 ## Questions / Problems?
 
@@ -54,9 +52,9 @@ Test method `test_loop_shows_table_or_empty()`.
 
 Three sub-tasks related to the table and loop, all in file `resources/views/rows.blade.php`:
 
-- in the first column, add the row number: 1, 2, etc.
-- only every second row (2nd, 4th, etc) should have CSS class "bg-red-100"
-- only the FIRST row should have email column with "font-bold"
+-   in the first column, add the row number: 1, 2, etc.
+-   only every second row (2nd, 4th, etc) should have CSS class "bg-red-100"
+-   only the FIRST row should have email column with "font-bold"
 
 Test method `test_rows_styled_with_number()`.
 

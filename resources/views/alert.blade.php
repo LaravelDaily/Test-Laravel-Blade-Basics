@@ -1,18 +1,19 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Security alert') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    {!! $text !!}
-                    Your task is to change the code of alert.blade.php, to avoid that JavaScript alert.
-                </div>
-            </div>
+<div class="modal" tabindex="-1" role="dialog" id="security-alert-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ __('Security Alert') }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('Close') }}">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          {{ $text }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">{{ __('OK') }}</button>
+        </div>
+      </div>
     </div>
-</x-app-layout>
+  </div>
+  

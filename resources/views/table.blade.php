@@ -18,16 +18,23 @@
                             </tr>
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
-                        <tbody>
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">No content.</td>
-                            </tr>
-                        </tbody>
+                        @if ($users->count() > 0)
+                            <tbody>
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->created_at }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        @else
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
+                            </tbody>
+                        @endif
                     </table>
                 </div>
             </div>

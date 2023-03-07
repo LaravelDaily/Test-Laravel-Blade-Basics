@@ -21,8 +21,8 @@
                         <tbody>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr {{ $loop->index % 2 === 1 ? 'class="bg-red-100"' : '' }}>
-                                    <td>{{ $loop->index + 1 }}</td>
+                                <tr {{ $loop->iteration % 2 === 0 ? 'class="bg-red-100"' : '' }}>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     <td {{ $loop->first ? 'class="font-bold"' : '' }}>{{ $user->email }}</td>

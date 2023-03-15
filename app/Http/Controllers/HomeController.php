@@ -10,8 +10,7 @@ class HomeController extends Controller
     public function users()
     {
         $usersCount = User::count();
-
-        return view('users');
+        return view('users', ['usersCount' => $usersCount]);
     }
 
     // Task 2. Change the View code so alert would not show on the screen

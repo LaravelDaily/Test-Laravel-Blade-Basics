@@ -1,4 +1,7 @@
+
 <x-app-layout>
+    @section('content')
+    @extends('layouts.main')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -6,8 +9,10 @@
                     {{-- Task: change the layout from layouts/app.blade.php --}}
                     {{-- to layouts/main.blade.php --}}
                     Please change layout.
+
                 </div>
             </div>
         </div>
     </div>
 </x-app-layout>
+@endsection

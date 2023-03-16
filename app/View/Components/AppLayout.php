@@ -11,10 +11,6 @@ class AppLayout extends Component
      *
      * @return \Illuminate\View\View
      */
-    public $metaTitle;
-    public function __construct(){
-        $this->metaTitle = "Blade Test";
-    }
 
     public function render()
     {

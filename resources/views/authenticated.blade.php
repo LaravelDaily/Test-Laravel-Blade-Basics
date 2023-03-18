@@ -13,7 +13,7 @@
                     {{-- If user is logged in, show their email --}}
                    
                     Yes, I am logged in as .
-                   
+                    
                     No, I am not logged in.
                   
                 </div>

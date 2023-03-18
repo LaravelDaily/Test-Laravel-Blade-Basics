@@ -12,7 +12,7 @@ class ViewsTest extends TestCase
 
     public function test_users_list_get_with_values()
     {
-        $response = $this->get('users');
+        $response = $this->get('users'); 
         $response->assertOk();
     }
 

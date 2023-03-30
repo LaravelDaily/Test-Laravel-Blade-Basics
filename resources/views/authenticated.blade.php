@@ -13,7 +13,7 @@
                     {{-- If user is logged in, show their email --}}
                     Yes, I am logged in as [insert_user_email_here].
                     @auth
-                        {{ @auth()->$user->email }}
+                        {{ auth()->$user->email }}
                     @else
                     No, I am not logged in.
                     @endauth

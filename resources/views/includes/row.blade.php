@@ -1,3 +1,3 @@
 
 <td>{{ $user->name }}</td>
-<td>{{ $ahmet->email }}</td>
+<td>{{ $user->email }}</td>

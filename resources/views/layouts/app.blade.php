@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        {{-- Task: edit one file to pass $metaTitle as "Blade Test" to all views --}}
+        {{-- Task: edit one file to pass $metaTitle as "Blade Test" to all views + --}}
+        {{$metaTitle = "Blade Test"}}
         <title>{{ $metaTitle ?? 'Laravel' }}</title>
 
         <!-- Fonts -->

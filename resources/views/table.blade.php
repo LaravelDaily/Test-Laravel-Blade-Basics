@@ -18,8 +18,8 @@
                             </tr>
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
-                        @foreach ($users as $user)
                         <tbody>
+                        @foreach ($users as $user)
                             @if (!empty($users))
                             <tr>
                                 <td>{{ $user->name }}</td>
@@ -31,6 +31,7 @@
                                 <td colspan="3">No content.</td>
                             </tr>
                             @endif
+                           @endforeach
                         </tbody>
                     </table>
                 </div>

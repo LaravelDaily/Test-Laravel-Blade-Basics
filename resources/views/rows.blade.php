@@ -21,7 +21,7 @@
                         <tbody>
                             @foreach ($users as $i => $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                @php $class = $i ÷ 2 === 0 ? 'bg-red-100' : 'odd'; @endphp
+                                @php $class = $i % 2 === 0 ? 'bg-red-100' : 'odd'; @endphp
                                 <tr class={{ $class }}>
                                     <td>{{ $user[$i] }}</td>
                                     <td>{{ $user->name }}</td>

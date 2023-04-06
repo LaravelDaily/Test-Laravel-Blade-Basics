@@ -26,7 +26,7 @@
                                     <td>{{ $user[$i] }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    @if ($user[i] == 0)
+                                    @if ($user[$i] == 0)
                                     <td class="font-bold">{{ $user->email }}</td>
                                     @else
                                     <td>{{ $user->email }}</td>

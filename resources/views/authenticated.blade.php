@@ -16,7 +16,6 @@
                     @endauth
                     @guest
                         No, I am not logged in.
-
                     @endguest
                 </div>
             </div>

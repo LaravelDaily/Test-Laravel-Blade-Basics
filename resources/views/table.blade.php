@@ -18,23 +18,23 @@
                             </tr>
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
-                        @foreach ($users as $user)
-                            <tbody>
-                                @isset($user)
+                        <tbody>
+                            @isset($user)
+                                @foreach ($users as $user)
                                     <tr>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->created_at }}</td>
                                     </tr>
-                                @endisset
+                                @endforeach
+                            @endisset
 
-                                @empty($user)
-                                    <tr>
-                                        <td colspan="3">No content.</td>
-                                    </tr>
-                                @endempty
-                            </tbody>
-                        @endforeach
+                            @empty($user)
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
+                            @endempty
+                        </tbody>
                     </table>
                 </div>
             </div>

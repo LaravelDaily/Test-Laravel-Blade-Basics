@@ -12,7 +12,9 @@
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
                     @auth
-                        <p>Yes I am logged in as {{ $user->email }}</p>
+                        @foreach ($users as $user)
+                            <p>Yes I am logged in as {{ $user->email }}</p>
+                        @endforeach
                     @else
                         <p>No, I am not logged in.</p>
                     @endauth

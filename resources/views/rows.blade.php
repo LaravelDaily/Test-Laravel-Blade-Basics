@@ -21,7 +21,7 @@
                         <tbody>
                             @foreach ($users as $user)
                             {{-- Task: only every second row should have "bg-red-100" --}}
-                            @if ($user->id % 2 == 0)
+                            @if ($loop->iteration % 2 == 0)
                             <tr class="bg-red-100">
                                 @else
                             <tr>

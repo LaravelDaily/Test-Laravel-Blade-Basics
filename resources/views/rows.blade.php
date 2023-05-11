@@ -29,7 +29,7 @@
                                 <td>{{ $loop->iteration }}{{-- Task: add row number here: 1, 2, etc. --}}</td>
                                 <td>{{ $user->name }}</td>
                                 {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                @if ($user[0]->id)
+                                @if ($user[0])
                                 <td class="font-bold">{{ $user->email }}</td>
                                 @else
                                 <td>{{ $user->email }}</td>

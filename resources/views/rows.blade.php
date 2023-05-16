@@ -25,18 +25,14 @@
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr
-                                @if($rowNumber % 2 == 0)
+                                @if($rowNumber % 2 === 0)
                                     class="bg-red-100"
                                 @endif
                                 >
                                     <td>{{ $rowNumber }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td
-                                        @if($rowNumber === 1)
-                                        class="font-bold"
-                                        @endif
-                                    >{{ $user->email }}</td>
+                                    <td @if($rowNumber === 1) class="font-bold" @endif>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                                 @php

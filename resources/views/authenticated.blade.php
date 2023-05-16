@@ -13,7 +13,7 @@
                     {{-- If user is logged in, show their email --}}
                     @auth
                         Yes, I am logged in as {{ \Illuminate\Support\Facades\Auth::user()->email }}.
-                    @elseauth
+                    @else
                         No, I am not logged in.
                     @endauth
                 </div>

@@ -22,7 +22,6 @@
                             @foreach ($users as $user)
                                 @php
                                     $rowNumber = 1;
-                                    $rowNumber++;
                                 @endphp
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr
@@ -40,6 +39,9 @@
                                     >{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
+                                @php
+                                    $rowNumber++;
+                                @endphp
                             @endforeach
                         </tbody>
                     </table>

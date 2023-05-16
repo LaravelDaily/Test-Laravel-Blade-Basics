@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- Task: edit one file to pass $metaTitle as "Blade Test" to all views --}}
-        <title>{{ $metaTitle ?? 'Blade Test' }}</title>
+        <title>{{ $metaTitle ?? 'Laravel' }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -19,7 +19,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation', ['Blade Test' => $metaTitle])
+            @include('layouts.navigation', ['metaTitle' => 'Blade Test'])
 
             <!-- Page Heading -->
             <header class="bg-white shadow">

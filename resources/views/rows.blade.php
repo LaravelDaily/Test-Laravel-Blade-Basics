@@ -19,13 +19,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $rowNumber = 1;
+                        @endphp
                             @foreach ($users as $user)
-                                @php
-                                    $rowNumber = 1;
-                                @endphp
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr
-                                @if($rowNumber %2 === 0)
+                                @if($rowNumber % 2 === 0)
                                     class="bg-red-100"
                                 @endif
                                 >

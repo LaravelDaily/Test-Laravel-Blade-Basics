@@ -24,15 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', function ($view) {
-            $view->with('metaTitle', $this->getMetaTitle());
-        });
+        view()->share('newUsersThisWeekCount', 'MyWebsite');
     }
 
-    private function getMetaTitle()
-    {
-        // You can implement your logic here to determine the meta title dynamically
-        // For simplicity, let's assume a static value for demonstration purposes
-        return 'My Website';
-    }
 }

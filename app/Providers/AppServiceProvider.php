@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->share('newUsersThisWeekCount', 'MyWebsite');
+        view()->share('metaTitle', 'MyWebsite');
     }
 
 }

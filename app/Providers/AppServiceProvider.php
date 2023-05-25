@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('layouts.app', function ($view) {
+        View::composer('*', function ($view) {
             $view->with('metaTitle', $this->getMetaTitle());
         });
     }

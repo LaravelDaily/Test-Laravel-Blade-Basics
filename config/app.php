@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'metaTitle' => env('META_TITLE', 'Blade Test'),
 
     /*
     |--------------------------------------------------------------------------

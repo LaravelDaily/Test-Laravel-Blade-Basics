@@ -1,5 +1,4 @@
 <x-app-layout>
-    <x-slot name="metaTitle">{{ $metaTitle }}</x-slot>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}

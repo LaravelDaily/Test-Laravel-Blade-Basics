@@ -14,7 +14,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::view('/', 'dashboard')->name('dashboard');
+Route::view('/', 'dashboard', ['metaTitle' => 'Blade Test'])->name('dashboard');
 
 Route::get('/users', [HomeController::class, 'users'])->name('users');
 Route::get('/alert', [HomeController::class, 'alert'])->name('alert');

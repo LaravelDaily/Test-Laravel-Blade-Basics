@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users',compact('usersCount'));
     }
 
     // Task 2. Change the View code so alert would not show on the screen
@@ -26,16 +26,16 @@ class HomeController extends Controller
     public function table()
     {
         $users = User::all();
-
-        return view('table', compact('users'));
+        $usersCount = User::count();
+        return view('table', compact('users','usersCount'));
     }
 
     // Task 3. Change the View code to show users, or row "No content" if 0 users
     public function rows()
     {
         $users = User::all();
-
-        return view('rows', compact('users'));
+        $usersCount = User::count();
+        return view('rows', compact('users','usersCount'));
     }
 
     public function include()

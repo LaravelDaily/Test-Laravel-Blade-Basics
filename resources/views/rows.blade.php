@@ -19,12 +19,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            $row = 1;
+                            <?php $row = 1; ?>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                $class = $row % 2 === 0 ? "bg-red-100" : ""; 
+                                <?php $class = $row % 2 === 0 ? "bg-red-100" : ""; ?>
                                 <tr class=$class>
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}} $row</td>
+                                    <td>{{-- Task: add row number here: 1, 2, etc. --}} <?php echo $row ?></td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     @if($row === 1)
@@ -32,8 +32,9 @@
                                     @endif
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
-                                $row++;
+                                <?php $row++; ?>
                             @endforeach
+                            
                         </tbody>
                     </table>
                 </div>

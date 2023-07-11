@@ -11,8 +11,11 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
-                    Yes, I am logged in as [insert_user_email_here].
+                    @if(auth()->check())
+                    Yes, I am logged in as {{ auth()->user()->name }}.
+                    @else
                     No, I am not logged in.
+                    @endif
                 </div>
             </div>
         </div>

@@ -6,7 +6,9 @@
                     {{-- Task: change the layout from layouts/app.blade.php --}}
                     @extends('main')
                     {{-- to layouts/main.blade.php --}}
+                    @section('content')
                     Please change layout.
+                    @endsection
                 </div>
             </div>
         </div>

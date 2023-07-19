@@ -19,13 +19,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for($i = 0; $i < sizeof($users); $i++)
+                            @for($i = 1; $i <= sizeof($users); $i++)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr @class([ "bg-red-100" => $i % 2 === 0 && $i !== 0 ])>
+                                <tr @class([ "bg-red-100" => $i % 2 === 0 ])>
                                     <td>{{-- Task: add row number here: 1, 2, etc. --}}{{ $i }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td @class([ "font-bold" => $i === 0 ])>{{ $user->email }}</td>
+                                    <td @class([ "font-bold" => $i === 1 ])>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endfor

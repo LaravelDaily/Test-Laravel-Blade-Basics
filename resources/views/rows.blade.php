@@ -19,16 +19,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for($i = 1; $i <= sizeof($users); $i++)
-                                {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr @class([ "bg-red-100" => $i % 2 === 0 ])>
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}{{ $i }}</td>
-                                    <td>{{ $users[$i]->name }}</td>
-                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td @class([ "font-bold" => $i === 1 ])>{{ $users[$i]->email }}</td>
-                                    <td>{{ $users[$i]->created_at }}</td>
+                            @foreach ($users as $user)
+                                <tr @class([ "bg-red-100" => $loop->even ])>
+                                    <td> Task: add row number here: 1, 2, etc. </td>
+                                    <td>{{ $user->name }}</td>
+                                     Task: only the FIRST row should have email with "font-bold"
+                                    <td @class([ "font-bold" => $loop->iteration === 1 ])>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
                                 </tr>
-                            @endfor
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

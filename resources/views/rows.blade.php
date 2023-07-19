@@ -25,7 +25,7 @@
                                     <td>{{-- Task: add row number here: 1, 2, etc. --}}{{ $i }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td @class([ "font-bold" => $i === 1 ])>{{ $user->email }}</td>
+                                    <td @class([ "font-bold" => $i === 0 ])>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endfor

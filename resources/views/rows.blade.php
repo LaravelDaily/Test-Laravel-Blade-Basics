@@ -19,22 +19,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if( count($users)>0 )
-                                @foreach ($users as $key->$user)
-                                    {{-- Task: only every second row should have "bg-red-100" --}}
-                                    <tr class="{{ $key % 2 == 0 ? 'bg-red-100' : '' }}">
-                                        <td>{{-- Task: add row number here: 1, 2, etc. -- $key }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                        <td class="{{ $key == 0 ? 'font-bold' : '' }}">{{ $user->email }}</td>
-                                        <td>{{ $user->created_at }}</td>
-                                    </tr>
-                                @endforeach
-                            @else
-                                <tr>
-                                    <td>No content.</td>
+                            @foreach ($users as $user)
+                                {{-- Task: only every second row should have "bg-red-100" --}}
+                                <tr class="{{ $loop->iteration % 2 ? '' : 'bg-red-100' }}">
+                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}{{ $loop->iteration }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
+                                    <td class="{{ $loop->index ? '' : 'font-bold' }}">{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
                                 </tr>
-                            @endif
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

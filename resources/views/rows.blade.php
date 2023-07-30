@@ -19,27 +19,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $key->$user)
-                                {{-- Task: only every second row should have "bg-red-100" --}}
-                                @if($key==1)
-                                    <tr class="bg-red-100">
-                                @endif
-                                @unless($key==1)
-                                    <tr>
-                                @endunless
-                                    <td>{{-- Task: add row number here: 1, 2, etc. -- $key }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    @if($user->id == 1)
-                                        <td class="font-bold">{{ $user->email }}</td>
-                                    @endif
-                                    @unless($user->id == 1)
-                                        <td>{{ $user->email }}</td>
-                                    @endunless
-                                    
-                                    <td>{{ $user->created_at }}</td>
+                            @if( count($users)>0 )
+                                @foreach ($users as $key->$user)
+                                    {{-- Task: only every second row should have "bg-red-100" --}}
+                                    <tr class="$key % 2 == 0 ? 'bg-red-100' : '' ">
+                                        <td>{{-- Task: add row number here: 1, 2, etc. -- $key }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        {{-- Task: only the FIRST row should have email with "font-bold" --}}
+                                        <td class="{{ $key == 0 ? 'font-bold' : '' ">{{ $user->email }}</td>
+                                        <td>{{ $user->created_at }}</td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td>No content.</td>
                                 </tr>
-                            @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>

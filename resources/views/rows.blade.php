@@ -19,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as key => $user)
+                            @foreach ($users as $key => $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr @if ($key++ % 2) class="bg-red-100" @endif>
                                     <td>{{$key}}</td>

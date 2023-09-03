@@ -11,11 +11,11 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
-                    @quest
-                         No, I am not logged in.
-                    @elsequest
-                        Yes, I am logged in as [{{ auth()->user()->email }}].
-                    @endquest
+                    @auth
+                         Yes, I am logged in as [{{ auth()->user()->email }}].
+                    @elseauth
+                        No, I am not logged in.
+                    @endauth
                    
                 </div>
             </div>

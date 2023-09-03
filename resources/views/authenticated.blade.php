@@ -14,7 +14,7 @@
                     @quest
                          No, I am not logged in.
                     @elsequest
-                        Yes, I am logged in as {{ auth()->user()->email }}.
+                        Yes, I am logged in as [{{ auth()->user()->email }}].
                     @endquest
                    
                 </div>

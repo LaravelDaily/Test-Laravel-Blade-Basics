@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Authenticated?') }}
+            {{ 'Authenticated?' }}
         </h2>
     </x-slot>
 
@@ -11,8 +11,11 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
-                    Yes, I am logged in as [insert_user_email_here].
-                    No, I am not logged in.
+                    @auth
+                        Yes, I am logged in as {{ auth()->user()->email }}.
+                    @else
+                        No, I am not logged in.
+                    @endauth
                 </div>
             </div>
         </div>

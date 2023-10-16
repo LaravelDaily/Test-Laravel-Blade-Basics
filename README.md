@@ -26,7 +26,7 @@ Good luck!
 
 ---
 
-## Task 1. Passing Data to Views.
+## Task 1. Passing Data to Views. +
 
 File `app/Http/Controllers/HomeController.php`, method `users()`, pass the `$usersCount` to the View.
 
@@ -34,7 +34,7 @@ Test method `test_users_list_get_with_values()`.
 
 ---
 
-## Task 2. Prevent the XSS Attack.
+## Task 2. Prevent the XSS Attack. +
 
 The page `/alert` will show you a JavaScript alert. You need to change something in `resources/views/alert.blade.php` file, so that this alert would not be thrown, and instead just its HTML would be shown.
 
@@ -42,7 +42,7 @@ Test method `test_script_alert_does_not_fire_modal`.
 
 ---
 
-## Task 3. Loop in the Table.
+## Task 3. Loop in the Table. +
 
 The file `resources/views/table.blade.php` should show the loop of all users, or "No content" row, if no users are in the database.
 
@@ -50,7 +50,7 @@ Test method `test_loop_shows_table_or_empty()`.
 
 ---
 
-## Task 4. Styling Table Rows.
+## Task 4. Styling Table Rows. +
 
 Three sub-tasks related to the table and loop, all in file `resources/views/rows.blade.php`:
 
@@ -62,7 +62,7 @@ Test method `test_rows_styled_with_number()`.
 
 ---
 
-## Task 5. Logged-in User.
+## Task 5. Logged-in User. +
 
 In the file `resources/views/authenticated.blade.php`, show the appropriate text, if the user is/isn't logged in.
 
@@ -72,7 +72,7 @@ Test method `test_authenticated()`.
 
 ---
 
-## Task 6. Include File.
+## Task 6. Include File. +
 
 In the file `resources/views/include.blade.php`, include another Blade file `resources/views/includes/row.blade.php`, passing the parameter correctly.
 
@@ -80,7 +80,7 @@ Test method `test_include_row()`.
 
 ---
 
-## Task 7. Global Variable.
+## Task 7. Global Variable. +
 
 In the file `resources/views/layouts/app.blade.php`, there's a "global" variable `$metaTitle`. Pass its value to this view, for all pages, without touching any Controllers.
 
@@ -88,7 +88,7 @@ Test method `test_meta_title()`.
 
 ---
 
-## Task 8. Layouts.
+## Task 8. Layouts. +
 
 Change the file `resources/views/layout.blade` to extend the `layouts/main.blade.php` (without Blade components) instead of `layouts/app.blade.php` (with Blade components).
 

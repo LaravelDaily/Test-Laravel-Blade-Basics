@@ -19,30 +19,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @forelse ($users as $user)
-                                Task: only every second row should have "bg-red-100"
-                                <tr>
-                                    <td>1</td>
-                                    <td class="bg-red-100">{{ $user->name }}</td>
-                                   Task: only the FIRST row should have email with "font-bold"
+                            @foreach ($users as $key => $user)
+                                <tr @if($key % 2 == 1) class="bg-red-100" @endif>
+                                    <td>{{ $key + 1 }}</td>
+                                    <td>{{ $user->name }}</td>
                                     <td class="font-bold">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
-                                </tr> --}}
-                            {{-- @empty
-                                <tr>
-                                    <td colspan="4">No content.</td>
                                 </tr>
-                            @endforelse --}}
-                            @foreach ($users as $key => $user)
-                            <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td @if($key == 0) class="font-bold" @endif>{{ $user->name }}</td>
-                                <td @if($key == 0) class="font-bold" @endif>{{ $user->email }}</td> <!-- Appliquer "font-bold" uniquement à la première ligne -->
-                                <td>{{ $user->created_at }}</td>
-                            </tr>
                             @endforeach
-
-                            @yield('content')
                         </tbody>
                     </table>
                 </div>

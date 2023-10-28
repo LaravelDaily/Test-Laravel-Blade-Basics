@@ -30,20 +30,25 @@ class ViewsTest extends TestCase
 
     public function test_rows_styled_with_number()
     {
-        $users = User::factory(4)->create();
+
+        // Create 4 user records
+        $users= User::factory(4)->create();
+
+        // Make a GET request to the '/rows' endpoint
         $response = $this->get('/rows');
-        $content = $response->content();
 
+        // Assert that the response has a status code of 200 (OK)
+        $response->assertStatus(200);
 
-
-
+        // Get the content of the response
+        $content = $response->getContent();
+        // dd($content);
+        // Assert that 'bg-red-100' is present in the content exactly 2 times
         $this->assertEquals(2, substr_count($content, 'bg-red-100'));
 
-        $this->assertStringContainsString('<td class="font-bold">'.$users[0]->email.'</td>',
-            str_replace(' ', '', $content));
-
-
+        // Assert that the email of the first user is present within a table cell with 'font-bold' class
         $this->assertStringContainsString('<td class="font-bold">' . $users[0]->email . '</td>', $content);
+
     }
 
     public function test_authenticated()

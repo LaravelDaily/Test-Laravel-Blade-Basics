@@ -11,15 +11,13 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users', compact('usersCount'));
     }
 
     // Task 2. Change the View code so alert would not show on the screen
     public function alert()
     {
-        $text = '<script>alert("I am a security alert, your task is to remove me.");</script>';
-
-        return view('alert', compact('text'));
+        return view('alert');
     }
 
     // Task 3. Change the View code to show users, or row "No content" if 0 users

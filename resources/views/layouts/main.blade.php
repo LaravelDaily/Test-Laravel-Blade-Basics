@@ -19,6 +19,7 @@
     <body>
         <div class="font-sans text-gray-900 antialiased">
             @yield('content')
+            @include('layouts.navigation')
         </div>
     </body>
 </html>

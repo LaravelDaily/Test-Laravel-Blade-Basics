@@ -25,11 +25,9 @@
                             @endphp
                             
                             @foreach ($users as $user)
-                                @if($loop->even)
-                                    $isValue=true;
-                                @else
-                                    $isValue=false;
-                                @endif
+                               @php
+                                    $isValue=!$isValue;
+                                @endphp
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr @class(['bg-red-100'=>$isValue]) >
                                     <td>{{$loop->index+1}}{{-- Task: add row number here: 1, 2, etc. --}}</td>

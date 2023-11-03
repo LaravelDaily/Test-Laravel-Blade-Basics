@@ -19,27 +19,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php
-                                $isValue=true;
-                            @endphp
-                            
-                            
                             @foreach ($users as $user)
+                                @if($loop->even)
+                                    $isValue=true;
+                                @else
+                                    $isValue=false;
+                                @endif
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                @php    
-                                    $isValue=!$isValue;
-                                @endphp
-                                <tr class="{{$loop->even?'bg-red-100':''}}" >
-                                    <td>{{$loop->iteration}} {{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                <tr @class(['bg-red-100'=>$isValue]) >
+                                    <td>{{$loop->index+1}}{{-- Task: add row number here: 1, 2, etc. --}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    
                                     @if($loop->first)
-                                        <td class='font-bold' >{{ $user->email }}</td>
+                                        <td class="font-bold">{{ $user->email }}</td>
                                     @else
                                         <td>{{ $user->email }}</td>
                                     @endif
-                                    
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

@@ -30,11 +30,11 @@
                                     $isValue=!$isValue;
                                 @endphp
                                 <tr @class(['bg-red-100'=>$isValue]) >
-                                    <td>{{$loop->iteration}}{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                    <td>{{$loop->iteration}} {{-- Task: add row number here: 1, 2, etc. --}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     
-                                    @if($loop->first)
+                                    @if($loop->first==true)
                                         <td class='font-bold' >{{ $user->email }}</td>
                                     @else
                                         <td>{{ $user->email }}</td>

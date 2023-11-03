@@ -19,6 +19,11 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            @php
+                                $isValue=true;
+                            @endphp
+                            
                             @foreach ($users as $user)
                                 @if($loop->even)
                                     $isValue=true;

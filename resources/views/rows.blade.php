@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             @php
-                                $isValue=true;
+                                $isValue=false;
                             @endphp
                             
                             
@@ -34,7 +34,7 @@
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     
-                                    @if($loop->first==true)
+                                    @if($loop->first)
                                         <td class='font-bold' >{{ $user->email }}</td>
                                     @else
                                         <td>{{ $user->email }}</td>

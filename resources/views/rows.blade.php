@@ -27,9 +27,8 @@
                             
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-
-                               
-                                <tr @class(['bg-red-100'=>!$isValue])>
+                                $isValue=!$isValue
+                                <tr @class(['bg-red-100'=>$isValue])>
                                     <td>$loop->iteration{{-- Task: add row number here: 1, 2, etc. --}}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}

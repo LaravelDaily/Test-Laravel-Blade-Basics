@@ -35,8 +35,7 @@
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
                                     @if($loop->first)
                                         <td class='font-bold' >{{ $user->email }}</td>
-                                    @else
-                                        <td  >{{ $user->email }}</td>
+                            
                                     @endif
                                     <td>{{ $user->created_at }}</td>
                                 </tr>

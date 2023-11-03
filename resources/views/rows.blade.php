@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             @php
-                                $isValue=true
+                                $isValue=true;
                             @endphp
                             
                             

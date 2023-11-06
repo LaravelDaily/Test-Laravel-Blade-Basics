@@ -22,6 +22,7 @@
                             @php
                                 $isValue=true;
                             @endphp
+                            
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 @php
@@ -37,6 +38,7 @@
                                         <td class="font-bold">{{ $user->email }}</td>
                                     @else
                                         <td>{{ $user->email }}</td>
+                                    @endif
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

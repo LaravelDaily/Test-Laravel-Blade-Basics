@@ -15,7 +15,6 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::view('/', 'dashboard')->name('dashboard');
-
 Route::get('/users', [HomeController::class, 'users'])->name('users');
 Route::get('/alert', [HomeController::class, 'alert'])->name('alert');
 Route::get('/table', [HomeController::class, 'table'])->name('table');

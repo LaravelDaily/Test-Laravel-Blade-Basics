@@ -1,3 +1,4 @@
+@php use App\Models\User; @endphp
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -11,8 +12,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
-                    Yes, I am logged in as [insert_user_email_here].
+                   @if(auth()->user())
+
+                    Yes, I am logged in as {{ auth()->user()->email }}
+                    @else
                     No, I am not logged in.
+                    @endif
                 </div>
             </div>
         </div>

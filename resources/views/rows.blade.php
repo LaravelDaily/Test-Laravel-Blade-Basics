@@ -19,13 +19,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                         
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                @php
+                                    $even = $loop->iteration%2===0;
+                                    $first = $loop->iteration === 1;
+                                @endphp
+                                <tr @class(['', 'bg-red-100' => $even])>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    <td @class(['', 'font-bold' => $first])>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

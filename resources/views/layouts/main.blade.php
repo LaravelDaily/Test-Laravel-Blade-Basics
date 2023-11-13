@@ -18,7 +18,8 @@
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
-            @yield('content')
+            {{$slot}}
+            {{--@yield('content') --}}
         </div>
     </body>
 </html>

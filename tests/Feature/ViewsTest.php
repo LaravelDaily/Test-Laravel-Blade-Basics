@@ -16,13 +16,16 @@ class ViewsTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_script_alert_does_not_fire_modal()
+    public function test_script_alert_does_not_fire_modal() 
     {
+    // Create a user to ensure the $users variable is defined
+        User::factory()->create();
+
         $response = $this->get('/alert');
         $this->assertStringNotContainsString('<script>alert', $response->content());
-        $this->assertStringContainsString('<td class="font-bold">' . $users[0]->email . '</td>',
-        str_replace(' ', '', $response->content()));
-        }
+        $this->assertStringContainsString('&lt;script&gt;alert', $response->content());
+    }
+
 
     public function test_loop_shows_table_or_empty()
     {

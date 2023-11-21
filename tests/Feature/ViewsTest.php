@@ -23,7 +23,7 @@ class ViewsTest extends TestCase
 
         $response = $this->get('/alert');
         $this->assertStringNotContainsString('<script>alert', $response->content());
-        $this->assertStringContainsString('&lt;script&gt;alert', $response->content());
+        $this->assertStringContainsString('&lt;script&gt;alert', $response->content()); // line 26
     }
 
 

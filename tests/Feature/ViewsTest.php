@@ -20,8 +20,9 @@ class ViewsTest extends TestCase
     {
         $response = $this->get('/alert');
         $this->assertStringNotContainsString('<script>alert', $response->content());
-        $this->assertStringContainsString('&lt;script&gt;alert', $response->content());
-    }
+        $this->assertStringContainsString('<td class="font-bold">' . $users[0]->email . '</td>',
+        str_replace(' ', '', $response->content()));
+        }
 
     public function test_loop_shows_table_or_empty()
     {

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-$metaTitle = 'Blade Test';
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -7,7 +6,7 @@ $metaTitle = 'Blade Test';
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- Task: edit one file to pass $metaTitle as "Blade Test" to all views --}}
-        <title>{{ $metaTitle ?? 'Blade Test' }}</title>
+        <title>{{ $metaTitle ?? 'Laravel' }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">

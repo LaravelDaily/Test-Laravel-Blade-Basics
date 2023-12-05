@@ -10,12 +10,14 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- Task: add a condition to show correct text --}}
-                    @auth
                     {{-- If user is logged in, show their email --}}
-                    Yes, I am logged in as Auth::user()->email.
-                    @else
+                    @auth
+                        Yes, I am logged in as {{auth()->user()->email}}.
                     @endauth
-                    No, I am not logged in.
+                    
+                    @guest
+                        No, I am not logged in.
+                    @endguest
                 </div>
             </div>
         </div>

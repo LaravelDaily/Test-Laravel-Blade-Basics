@@ -30,7 +30,7 @@ class HomeController extends Controller
         return view('table', compact('users'));
     }
 
-    // Task 3. Change the View code to show users, or row "No content" if 0 users
+    // Task 4. Styling Table Rows.
     public function rows()
     {
         $users = User::all();

@@ -12,7 +12,7 @@ class HomeController extends Controller
         
         $metaTitle = 'Blade Test';
 
-        return view('layouts/app', compact('metaTitle'));
+        return view('layouts.app', compact('metaTitle'));
 
         
     }

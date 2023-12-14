@@ -7,15 +7,22 @@ use App\Models\User;
 class HomeController extends Controller
 {
     // Task 1. Change the Controller code to pass the variable to the View
-     public function users()
+     public function index()
     {
-        $usersCount = User::count();
         $meta_title = 'Blade Test';
 
-        return view('users', compact('usersCount' , 'meta_title'));
+        return view('/', compact('meta_title'));
 
         
     }
+    public function users()
+    {
+        $usersCount = User::count();
+        return view('users', compact('usersCount'));
+
+        
+    }
+
 
     // Task 2. Change the View code so alert would not show on the screen
     public function alert()

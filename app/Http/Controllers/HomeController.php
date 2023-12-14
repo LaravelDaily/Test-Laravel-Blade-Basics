@@ -12,7 +12,7 @@ class HomeController extends Controller
         $usersCount = User::count();
         $meta_title = 'Blade Test';
 
-        return view('users', ['usersCount' => 'usersCount', 'meta_title']);
+        return view('users', compact('usersCount' , 'meta_title'));
 
         
     }

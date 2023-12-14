@@ -17,10 +17,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                                                        @foreach ($users as $user)
                                 <tr class="bg-red-100">
                                     {{-- Task: include file resources/views/includes/row.blade.php --}}
                                     {{-- passing the $user variable to it --}}
+                                    @include('rows.user')
                                 </tr>
                             @endforeach
                         </tbody>

@@ -3,5 +3,5 @@
 @extends('layouts.main')
 
 @section('content')
-    <!-- Your content here -->
+   Please change layout
 @endsection

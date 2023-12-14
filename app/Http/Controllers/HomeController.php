@@ -7,18 +7,12 @@ use App\Models\User;
 class HomeController extends Controller
 {
     // Task 1. Change the Controller code to pass the variable to the View
-     public function index()
-    {
-        $meta_title = 'Blade Test';
-
-        return view('/', compact('meta_title'));
-
-        
-    }
-    public function users()
+     public function users()
     {
         $usersCount = User::count();
-        return view('users', compact('usersCount'));
+        $metaTitle = 'Blade Test';
+
+        return view('users', compact('usersCount', 'metaTitle'));
 
         
     }

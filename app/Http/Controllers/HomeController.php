@@ -7,15 +7,6 @@ use App\Models\User;
 class HomeController extends Controller
 {
     // Task 1. Change the Controller code to pass the variable to the View
-      public function index()
-    {
-        
-        $metaTitle = 'Blade Test';
-
-        return view('layouts.app', compact('metaTitle'));
-
-        
-    }
 
     public function users()
     {

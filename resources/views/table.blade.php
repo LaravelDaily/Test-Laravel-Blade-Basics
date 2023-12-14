@@ -18,6 +18,11 @@
                             </tr>
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
+                         @forelse ($users as $user)
+                           {{ $user }}
+                        @empty
+                            <p>No content</p>
+                        @endforelse
                         <tbody>
                             <tr>
                                 <td>{{ $user->name }}</td>

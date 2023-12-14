@@ -10,13 +10,15 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     {{-- Task: add a condition to show correct text --}}
-                   @auth
+                      @foreach($users as $user)
+                    @auth
                     Yes, I am logged in as {{ $user->email }}.
                     @endauth
                     {{-- If user is logged in, show their email --}}
                     @guest
                     No, I am not logged in.
                     @endguest
+                    @endforeach
                 </div>
             </div>
         </div>

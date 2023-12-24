@@ -25,11 +25,10 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at }}</td>
                             </tr>
-                            @empty($user)
+                            @empty
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>
-                            @endempty
                         </tbody>
                         @endforeach
                     </table>

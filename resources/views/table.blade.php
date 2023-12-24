@@ -20,7 +20,7 @@
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
                         
                         <tbody>
-                            @foreach ($users as $user)
+                            @forelse($users as $user)
                                 <tr>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
@@ -30,7 +30,7 @@
                                 <tr>
                                     <td colspan="3">No content.</td>
                                 </tr>
-                            @endforeach
+                            @endforelse
                         </tbody>
                        
                     </table>

@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Using Closure based composers...
+        View::composer('*', function ($view) {
+            $view->with('metaTitle', 'Blade Test');
+        });
     }
 }

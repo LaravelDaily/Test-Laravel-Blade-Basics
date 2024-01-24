@@ -19,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($users as $user)
+                            @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr class="bg-red-100">
                                     <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
@@ -28,9 +28,7 @@
                                     <td class="font-bold">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
-                            @empty
-                                 <p>No conten</p>
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

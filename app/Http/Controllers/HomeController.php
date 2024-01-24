@@ -19,7 +19,7 @@ class HomeController extends Controller
     {
         $text = '<script>alert("I am a security alert, your task is to remove me.");</script>';
 
-        return view('alert', compact('text'));
+        return view('alert');
     }
 
     // Task 3. Change the View code to show users, or row "No content" if 0 users

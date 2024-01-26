@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,4 @@ Route::view('/authenticated', 'authenticated')->name('authenticated');
 Route::get('/include', [HomeController::class, 'include'])->name('include');
 Route::view('/layout', 'layout')->name('layout');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

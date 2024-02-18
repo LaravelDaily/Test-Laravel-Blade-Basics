@@ -29,9 +29,6 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->created_at }}</td>
                                     </tr>
-                                    <tr>
-                                        <td colspan="3">No content.</td>
-                                    </tr>
                                 @endforeach
                             </tbody>
                         @endif

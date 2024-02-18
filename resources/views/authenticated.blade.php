@@ -12,7 +12,7 @@
                     {{-- Task: add a condition to show correct text --}}
                     {{-- If user is logged in, show their email --}}
                     @if (auth()->check())
-                        Yes, I am logged in as {{auth()->user->email}}.
+                        Yes, I am logged in as {{auth()->user()->email}}.
                     @else
                         No, I am not logged in.
                     @endif

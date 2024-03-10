@@ -10,6 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
+                        @if ($users->count() > 0)
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -17,17 +18,24 @@
                                 <th>Registered at</th>
                             </tr>
                         </thead>
-                        {{-- Task: add the loop here to show users, or the row "No content" --}}
                         <tbody>
+                            @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at }}</td>
                             </tr>
+                            @endforeach
+                        </tbody>
+                        @else
+                        <tbody>
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>
                         </tbody>
+                        @endif
+
+
                     </table>
                 </div>
             </div>

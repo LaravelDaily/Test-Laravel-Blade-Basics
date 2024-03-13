@@ -19,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($users as $user)
+                            @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
                                 <tr class="{{ $loop->iteration == 2 ? 'bg-red-100' : '' }}">
                                     <td>{{ $loop->iteration }}</td>
@@ -28,11 +28,7 @@
                                     <td class="{{ $loop->iteration == 1 ? 'font-bold' : '' }}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="3">No content.</td>
-                                </tr>
-                            @endforelse
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

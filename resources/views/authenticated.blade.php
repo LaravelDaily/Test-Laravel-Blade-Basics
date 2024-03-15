@@ -13,7 +13,7 @@
                     {{-- If user is logged in, show their email --}}
                     @auth
                         <div>Yes, I am logged in as {{ Auth::user()->email }}</div>
-                    @else
+                    @elseauth
                         <div>No, I am not logged in</div>
                     @endauth
                 </div>

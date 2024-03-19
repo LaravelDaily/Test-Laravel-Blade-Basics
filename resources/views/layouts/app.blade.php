@@ -7,7 +7,7 @@
 
         {{-- Task: edit one file to pass $metaTitle as "Blade Test" to all views --}}
         <title>
-            @yield('{{ $metaTitle => 'Blade Test'}}')
+            ('{{ $metaTitle ?? 'Laravel'  }}')
         </title>
 '
         <!-- Fonts -->

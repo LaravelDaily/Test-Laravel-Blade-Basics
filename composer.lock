@@ -6380,16 +6380,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.0.9",
+            "version": "10.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b027e0e266b2e51bb74d5050ff5b1304c40ea209"
+                "reference": "20c23e85c86e5c06d63538ba464e8054f4744e62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b027e0e266b2e51bb74d5050ff5b1304c40ea209",
-                "reference": "b027e0e266b2e51bb74d5050ff5b1304c40ea209",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/20c23e85c86e5c06d63538ba464e8054f4744e62",
+                "reference": "20c23e85c86e5c06d63538ba464e8054f4744e62",
                 "shasum": ""
             },
             "require": {
@@ -6421,7 +6421,7 @@
                 "sebastian/version": "^4.0"
             },
             "suggest": {
-                "ext-soap": "*"
+                "ext-soap": "To be able to generate mocks based on WSDL files"
             },
             "bin": [
                 "phpunit"
@@ -6460,7 +6460,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.9"
+                "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.19"
             },
             "funding": [
                 {
@@ -6476,7 +6477,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-19T07:11:46+00:00"
+            "time": "2023-03-27T11:46:33+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -7814,5 +7815,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

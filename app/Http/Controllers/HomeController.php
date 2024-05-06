@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Console\View\Components\Alert;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,7 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users', compact('usersCount'));
     }
 
     // Task 2. Change the View code so alert would not show on the screen

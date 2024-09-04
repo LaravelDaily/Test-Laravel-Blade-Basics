@@ -7,6 +7,13 @@ To test if all the functions work correctly, there are PHPUnit tests in `tests/F
 In the very beginning, if you run `php artisan test`, or `vendor/bin/phpunit`, all 8 tests fail.
 Your task is to make those tests pass.
 
+How to test :
+1. turn on xampp
+2. make .env
+3. composer install
+4. php artisan key:generate
+5. php artisan test
+
 
 ## How to Submit Your Solution
 

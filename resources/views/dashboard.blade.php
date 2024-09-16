@@ -15,3 +15,8 @@
         </div>
     </div>
 </x-app-layout>
+<x-app>
+    <x-slot:title>
+        Blade Test
+</x-slot>
+</x-app>

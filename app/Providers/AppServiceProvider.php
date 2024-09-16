@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::share('blade test', '../../resources/views/layouts/app.blade.php');
     }
 }

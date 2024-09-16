@@ -11,24 +11,30 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
                         <thead>
+                            @if (count($users) > 0)
                             <tr>
                                 <th>Row Number</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Registered at</th>
-                            </tr>
+                            </tr> 
+                            @endif
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @forelse ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                <tr class="{{ ($loop->even) ? 'bg-red-100' : ''}}">
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    <td class="{{ ($loop->first) ? 'font-bold' : ''}}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
-                            @endforeach
+                            @empty
+                            <tr>
+                                <td colspan="4">No content.</td>
+                            </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

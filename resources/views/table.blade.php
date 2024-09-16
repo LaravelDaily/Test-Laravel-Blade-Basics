@@ -11,23 +11,28 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
                         <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Registered at</th>
-                            </tr>
+                            @if (count($users) > 0)
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Registered at</th>
+                                </tr>
+                            @endif
                         </thead>
                         {{-- Task: add the loop here to show users, or the row "No content" --}}
-                        <tbody>
-                            <tr>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at }}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">No content.</td>
-                            </tr>
-                        </tbody>
+                        @forelse ($users as $user)
+                            <tbody>
+                                <tr>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                </tr>
+                        @empty
+                                <tr>
+                                    <td colspan="3">No content.</td>
+                                </tr>
+                            </tbody>
+                        @endforelse
                     </table>
                 </div>
             </div>

@@ -17,12 +17,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @forelse ($users as $user)
                                 <tr class="bg-red-100">
                                     {{-- Task: include file resources/views/includes/row.blade.php --}}
                                     {{-- passing the $user variable to it --}}
+                                    @include('includes.row', ['user' => $user])
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td>No content</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

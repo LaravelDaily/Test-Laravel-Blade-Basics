@@ -4,7 +4,7 @@
             {{ __('Users') }}
         </h2>
     </x-slot>
-
+    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -21,6 +21,7 @@
                                 <tr class="bg-red-100">
                                     {{-- Task: include file resources/views/includes/row.blade.php --}}
                                     {{-- passing the $user variable to it --}}
+                                    @include('includes.row', ['user' => $user])
                                 </tr>
                             @endforeach
                         </tbody>

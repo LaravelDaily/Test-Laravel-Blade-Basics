@@ -17,17 +17,25 @@
                                 <th>Registered at</th>
                             </tr>
                         </thead>
-                        {{-- Task: add the loop here to show users, or the row "No content" --}}
+                       
                         <tbody>
-                            <tr>
-                                <td>{{ $user->name }}</td>
+					@if ($users->count() > 0 )
+					@if(isset($users) && !empty($users))
+					@foreach($users as $key => $user)
+										<tr>
+							    <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at }}</td>
                             </tr>
+							@endforeach
+							@endif
+							@else
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>
+							@endif
                         </tbody>
+						
                     </table>
                 </div>
             </div>

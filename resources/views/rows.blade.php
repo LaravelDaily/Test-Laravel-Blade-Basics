@@ -1,4 +1,4 @@
-<x-app-layout>
+ <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Users') }}
@@ -21,11 +21,23 @@
                         <tbody>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                @if($loop->even)
+                                    <tr class='bg-red-100'>
+                                @else
+                                    <tr>
+                                @endif
+                                    <td>
+                                        @for ($i = 1; $i <= ($loop->count); $i++)
+                                            {{ $i }}
+                                        @endfor
+                                    </td>
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    @if($loop->first)
+                                        <td class="font-bold">{{ $user->email }}</td>
+                                    @else
+                                        <td>{{ $user->email }}</td>
+                                    @endif
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach
@@ -34,5 +46,6 @@
                 </div>
             </div>
         </div>
+        <!-- -- Task: add row number here: 1, 2, etc. - -->
     </div>
 </x-app-layout>

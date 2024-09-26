@@ -1,3 +1,4 @@
+@extends('includes.row')
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -20,6 +21,7 @@
                             @foreach ($users as $user)
                                 <tr class="bg-red-100">
                                     {{-- Task: include file resources/views/includes/row.blade.php --}}
+                                    @yield('row', {{$user}});
                                     {{-- passing the $user variable to it --}}
                                 </tr>
                             @endforeach

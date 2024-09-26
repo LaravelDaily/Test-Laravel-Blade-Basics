@@ -21,11 +21,20 @@
                         <tbody>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
+                                {{-- <tr class="bg-red-100">
+                                <td>Task: add row number here: 1, 2, etc.</td> --}}
+
+                                    <tr @class(["bg-red-100"=>$loop->even])>
+                                        <td>{{-- Task: add row number here: 1, 2, etc. --}} {{ $loop->iteration }}</td>
+
+
                                     <td>{{ $user->name }}</td>
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    {{-- <td class="font-bold">{{ $user->email }}</td> --}}
+                                    {{-- <td @if ($loop->first) class="font-bold" @endif> {{ $user->email }} --}}
+                                    {{-- </td> --}}
+                                    {{-- this is same as the up but when i use the upper give me not passed --}}
+                                    <td @class(["font-bold"=>$loop->first])>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

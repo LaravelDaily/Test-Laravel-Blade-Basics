@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -10,15 +11,13 @@ class HomeController extends Controller
     public function users()
     {
         $usersCount = User::count();
-
-        return view('users');
+        return view('users', ['usersCount' => $usersCount]);
     }
 
     // Task 2. Change the View code so alert would not show on the screen
     public function alert()
     {
         $text = '<script>alert("I am a security alert, your task is to remove me.");</script>';
-
         return view('alert', compact('text'));
     }
 
@@ -26,7 +25,6 @@ class HomeController extends Controller
     public function table()
     {
         $users = User::all();
-
         return view('table', compact('users'));
     }
 
@@ -34,14 +32,12 @@ class HomeController extends Controller
     public function rows()
     {
         $users = User::all();
-
         return view('rows', compact('users'));
     }
 
     public function include()
     {
         $users = User::all();
-
         return view('include', compact('users'));
     }
 }

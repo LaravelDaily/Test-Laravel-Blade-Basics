@@ -6,6 +6,12 @@ use Illuminate\View\Component;
 
 class AppLayout extends Component
 {
+    public string $metaTitle;
+
+    public function __construct(string $metaTitle = 'Blade Test') {
+        $this->metaTitle = $metaTitle;
+    }
+
     /**
      * Get the view / contents that represents the component.
      *

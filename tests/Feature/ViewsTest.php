@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ViewsTest extends TestCase
@@ -12,7 +13,11 @@ class ViewsTest extends TestCase
 
     public function test_users_list_get_with_values()
     {
+        $users = User::factory()->count(5)->create();
+
         $response = $this->get('users');
+        $response->assertStatus(200);
+        $response->assertViewHas('usersCount', $users->count());
         $response->assertOk();
     }
 

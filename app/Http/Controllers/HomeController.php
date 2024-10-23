@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 
 class HomeController extends Controller
@@ -11,13 +10,13 @@ class HomeController extends Controller
     {
         $usersCount = User::count();
 
-        return view('users');
+        return view('users', ['usersCount' => $usersCount]);
     }
 
     // Task 2. Change the View code so alert would not show on the screen
     public function alert()
     {
-        $text = '<script>alert("I am a security alert, your task is to remove me.");</script>';
+        $text = 'I am a security alert, your task is to remove me.';
 
         return view('alert', compact('text'));
     }
@@ -34,6 +33,10 @@ class HomeController extends Controller
     public function rows()
     {
         $users = User::all();
+
+        if($users->isEmpty()) {
+            return view('rows', ['users' => 'No content']);
+        }
 
         return view('rows', compact('users'));
     }

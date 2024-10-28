@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- Task: edit one file to pass $metaTitle as "Blade Test" to all views --}}
+
         <title>{{ $metaTitle ?? 'Laravel' }}</title>
 
         <!-- Fonts -->

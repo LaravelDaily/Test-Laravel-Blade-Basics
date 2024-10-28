@@ -11,18 +11,19 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table>
                         <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                            </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
-                                <tr class="bg-red-100">
-                                    {{-- Task: include file resources/views/includes/row.blade.php --}}
-                                    {{-- passing the $user variable to it --}}
-                                </tr>
-                            @endforeach
+                        @foreach ($users as $user)
+                            <tr class="bg-red-100">
+                                {{-- Task: include file resources/views/includes/row.blade.php --}}
+                                {{-- passing the $user variable to it --}}
+                                {{ view('includes.row', ['user'=>$user])}}
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

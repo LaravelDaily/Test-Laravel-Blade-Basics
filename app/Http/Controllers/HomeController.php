@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller
 {
     // Task 1. Change the Controller code to pass the variable to the View
     public function users()
     {
-        $usersCount = User::count();
+        $usersCount = User::all();
 
-        return view('users');
+        return view('usersCount', compact('usersCount'));
     }
 
     // Task 2. Change the View code so alert would not show on the screen

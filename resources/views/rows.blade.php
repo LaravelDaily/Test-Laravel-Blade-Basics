@@ -21,11 +21,14 @@
                         <tbody>
                             @foreach ($users as $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
-                                    <td>{{ $user->name }}</td>
+                                <tr class="{{$index % 2 == 1 ? 'bg-red-100' : ''}}">
+                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}
+                                        {{$index + 1 }}
+                                    </td>
+                                    <td>{{$user->name}}</td>
+                                    {{-- <td class ="{{ $index ==  0 ? 'font-bold' : ''}}">{{$user->email}}</td> --}}
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
-                                    <td class="font-bold">{{ $user->email }}</td>
+                                    <td class="{{ $index == 0 ? 'font-bold' : ''}}">{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                 </tr>
                             @endforeach

@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('*', function ($view) {
+            // You can set your global meta title here
+            $view->with('metaTitle', 'Blade Test');
+        });
     }
 }

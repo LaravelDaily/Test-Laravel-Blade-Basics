@@ -24,6 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        /**
+         * View Composer
+         * This approach allows to set the [$metaTitle] value centrally,
+         * making it easier to manage and update across your application.
+         */
+        View::composer('*', function ($view) {
+            $view->with('metaTitle', 'Blade Test');
+        });
     }
 }

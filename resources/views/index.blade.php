@@ -1,0 +1,1 @@
+<p>Users Count: {{ $usersCount }}</p>

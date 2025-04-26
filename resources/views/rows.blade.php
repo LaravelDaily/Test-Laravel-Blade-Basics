@@ -19,14 +19,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($users as $index => $user)
                                 {{-- Task: only every second row should have "bg-red-100" --}}
-                                <tr class="bg-red-100">
-                                    <td>{{-- Task: add row number here: 1, 2, etc. --}}</td>
-                                    <td>{{ $user->name }}</td>
+                                <tr class="{{ $index % 2  == 1? 'bg-red-100':''}}">
+                                    <td>{{$index+1}}</td>
+
                                     {{-- Task: only the FIRST row should have email with "font-bold" --}}
+                                    @if($index == 0)
                                     <td class="font-bold">{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
+                                    @else
+                                    <td>{{ $user->email }}</td>
+                                    @endif
+                                    <td>{{ $user->name }}</td>
+                                    {{-- <td>{{ $user->created_at }}</td> --}}
                                 </tr>
                             @endforeach
                         </tbody>

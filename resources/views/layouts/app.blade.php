@@ -1,3 +1,4 @@
+@props(['metaTitle' => 'Blade Test'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

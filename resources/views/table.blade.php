@@ -29,7 +29,7 @@
                             <tr>
                                 <td colspan="3">No content.</td>
                             </tr>
-                            @forelse
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
